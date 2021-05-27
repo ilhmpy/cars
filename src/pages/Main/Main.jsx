@@ -4,10 +4,11 @@ import { $data, mount, unmount } from '../../model/Main';
 import { PageContent, DataRelevance, Map, ErrorScreen, Loader } from '../../ui';
 import { FreePlaces } from './FreePlaces';
 import { ParkingList } from './ParkingList';
+import ParkingListPanel from "./ParkingListPanel";
 
 const Main = () => {
   const { img, items, free, time, loading, error } = useStore($data);
-  
+
   useEffect(() => {
     mount();
     return unmount;
@@ -18,10 +19,10 @@ const Main = () => {
 
   return (
     <PageContent>
-      <Map img={img} />
+      <Map img={img} items={items} />
       <FreePlaces free={free} />
       <DataRelevance time={time} />
-      <ParkingList items={items} />
+      <ParkingListPanel items={items} />
     </PageContent>
   );
 };
