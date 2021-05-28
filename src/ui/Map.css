@@ -9,23 +9,24 @@
 }
 
 .item--first-child {
-  margin-top: 176px;
+  margin-top: 196px;
   margin-left: -29px;
 }
 
 .item--second-child {
-  margin-top: 263px;
+  margin-top: 299px;
   margin-left: 161px;
 }
 
 .item--last-child {
-  margin-top: 334px;
+  margin-top: 378px;
   margin-left: 439px;
 }
 
 .map-img {
-  max-width: 662px;
-  max-height: 418px;
+   width: 60%;
+   max-width: 914px;
+   max-height: 467px;
 }
 
 .map-img__item:hover > div {

@@ -24,7 +24,7 @@ const Main = () => {
       <FreePlaces free={free} />
       <DataRelevance time={time} />
       {
-        scr <= 480 ? <ParkingList items={items} /> : ""
+        scr <= 500 ? <ParkingList items={items} /> : ""
       }
     </PageContent>
   );
