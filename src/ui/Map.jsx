@@ -1,43 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Skeleton from '@material-ui/lab/Skeleton';
 import { updatePath } from "../model/Router";
+import LegendaryItem from "./LegendaryItem";
+import "./Map.css";
+import "./MediaMap.css";
 
 const Map = ({ img, items }) => {
-  let scr = window.screen.width;
-  const [ positions, setPositions ] = useState (
-    {
-      firstPlace: scr <= 480 ? { min: 200, max: 230, id: 1 } : { min: 616, max: 632, id: 1 },
-      secondPlace: scr <= 480 ? { min: 300, max: 305, id: 2 } : { min: 720, max: 764, id: 2 },
-      fivePlace: scr <= 480 ? { min: 400, max: 405, id: 5 } : { min: 832, max: 918, id: 5 }
-    }
-  );
-
-  console.log(scr)
-
   function changePath (e) {
-    let x = e.pageX;
+    if (e.target.classList.contains("map-img__item")) updatePath(`/statistics/${e.target.dataset.place}`);
+  };
 
-    const { firstPlace, secondPlace, fivePlace } = positions;
+  const [ statistic, setStatistic ] = useState([]);
 
-    console.log(positions)
-
-    if (x <= firstPlace.max & x >= firstPlace.min) {
-      updatePath(`/statistics/${firstPlace.id}`);
-      return;
-    };
-    if (x <= secondPlace.max & x >= secondPlace.min) {
-      updatePath(`/statistics/${secondPlace.id}`);
-      return;
-    };
-    if (x <= fivePlace.max & x >= fivePlace.min) {
-      updatePath(`/statistics/${fivePlace.id}`);
-      return;
-    };
-  }
+  useEffect(() => {
+    if (items != undefined) items.forEach(item => setStatistic(statistic => [...statistic, { current: item.current, all: item.all }]));
+  }, []);
 
   window.addEventListener("mousedown", changePath);
   window.addEventListener("touchstart", changePath);
 
+  let scr = window.screen.width;
+
+  let margin = scr <= 480 ? {"margin-left": "0px"} : { "margin-left": "210px"};
 
   if (!img) {
     return (
@@ -50,7 +34,18 @@ const Map = ({ img, items }) => {
   };
 
   return (
-    <img className='map-img test' src={img} alt=''  />
+    <>
+      <img className='map-img' src={img} alt='' draggable={false} />
+      <div className="map-img__item item--first-child" data-place="1">
+        {statistic.length > 0 ? <LegendaryItem current={statistic[0].current} all={statistic[0].all} margin={{}} /> : ""}
+      </div>
+      <div className="map-img__item item--second-child" data-place="2">
+        {statistic.length > 0 ? <LegendaryItem current={statistic[1].current} all={statistic[1].all} margin={margin} /> : ""}
+      </div>
+      <div className="map-img__item item--last-child" data-place="5">
+        {statistic.length > 0 ? <LegendaryItem current={statistic[2].current} all={statistic[2].all}  margin={margin} /> : ""}
+      </div>
+    </>
   );
 };
 

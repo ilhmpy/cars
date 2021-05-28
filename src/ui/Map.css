@@ -1,0 +1,33 @@
+.map-img__item {
+  width: 230px;
+  height: 80px;
+  position: absolute;
+  display: flex;
+  user-select: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.item--first-child {
+  margin-top: 176px;
+  margin-left: -29px;
+}
+
+.item--second-child {
+  margin-top: 263px;
+  margin-left: 161px;
+}
+
+.item--last-child {
+  margin-top: 334px;
+  margin-left: 439px;
+}
+
+.map-img {
+  max-width: 662px;
+  max-height: 418px;
+}
+
+.map-img__item:hover > div {
+  display: flex;
+};

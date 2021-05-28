@@ -1,0 +1,41 @@
+.LegendaryItem__item {
+  max-width: 240px;
+  height: 30px;
+  justify-content: center;
+  float: right;
+  align-items: center;
+  background: #fff;
+  cursor: pointer;
+  display: none;
+  user-select: none;
+  border-radius: 10px;
+}
+
+.LegendaryItem__item > span:nth-child(2) {
+  margin-left: 5px;
+}
+
+.LegendaryItem__item > span:nth-child(3) {
+  margin-left: 5px;
+}
+
+.LegendaryItem__item:nth-child(1) {
+  margin-left: 110px;
+}
+
+.LegendaryItem__item:nth-child(2) {
+  margin-left: 120px;
+}
+
+.LegendaryItem__item:nth-child(3) {
+
+}
+
+@media only screen and (max-device-width: 600px) {
+  .LegendaryItem__item {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    margin-top: 136px;
+  }
+}

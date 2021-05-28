@@ -1,0 +1,40 @@
+@media only screen and (max-device-width: 600px) {
+  .map-img__item {
+    width: 69px;
+  }
+
+  .map-img {
+    width: 100%;
+  }
+  
+  .item--first-child {
+    margin-top: 76px;
+    margin-left: -102px;
+  }
+
+  .item--second-child {
+    margin-top: 102px;
+    margin-left: 79px;
+  }
+
+  .item--last-child {
+    margin-top: 161px;
+    margin-left: 237px;
+  }
+}
+
+@media only screen and (min-device-width: 480px) and (max-device-width: 600px) {
+  .item--first-child {
+    margin-top: 100px;
+  }
+
+  .item--second-child  {
+    margin-top: 160px;
+    margin-left: 90px;
+  }
+
+  .item--last-child  {
+    margin-top: 230px;
+    margin-left: 300px;
+  }
+}
