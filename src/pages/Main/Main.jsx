@@ -13,6 +13,8 @@ const Main = () => {
     return unmount;
   }, []);
 
+  let scr = window.screen.width;
+
   if (loading) { return <Loader /> };
   if (error) { return <ErrorScreen message={error} /> };
 
@@ -21,6 +23,9 @@ const Main = () => {
       <Map img={img} items={items} />
       <FreePlaces free={free} />
       <DataRelevance time={time} />
+      {
+        scr <= 480 ? <ParkingList items={items} /> : ""
+      }
     </PageContent>
   );
 };

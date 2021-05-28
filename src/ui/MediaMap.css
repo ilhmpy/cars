@@ -1,40 +1,25 @@
 @media only screen and (max-device-width: 600px) {
   .map-img__item {
     width: 69px;
+    height: 40px;
   }
 
   .map-img {
     width: 100%;
   }
-  
+
   .item--first-child {
-    margin-top: 76px;
+    margin-top: 130px;
     margin-left: -102px;
   }
 
   .item--second-child {
-    margin-top: 102px;
-    margin-left: 79px;
+    margin-top: 199px;
+    margin-left: 127px;
   }
 
   .item--last-child {
-    margin-top: 161px;
-    margin-left: 237px;
-  }
-}
-
-@media only screen and (min-device-width: 480px) and (max-device-width: 600px) {
-  .item--first-child {
-    margin-top: 100px;
-  }
-
-  .item--second-child  {
-    margin-top: 160px;
-    margin-left: 90px;
-  }
-
-  .item--last-child  {
-    margin-top: 230px;
-    margin-left: 300px;
+    margin-top: 251px;
+    margin-left: 307px;
   }
 }

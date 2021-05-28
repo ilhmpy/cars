@@ -33,9 +33,6 @@
 
 @media only screen and (max-device-width: 600px) {
   .LegendaryItem__item {
-    display: -webkit-flex;
-    display: -ms-flex;
-    display: flex;
-    margin-top: 136px;
+    display: none;
   }
 }

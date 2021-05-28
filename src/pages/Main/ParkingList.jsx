@@ -1,5 +1,6 @@
 import React from 'react';
 import { ListItem } from './ListItem';
+import "./ParkingList.css";
 
 const ParkingList = ({ items }) => {
   return (
